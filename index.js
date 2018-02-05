@@ -76,7 +76,7 @@ function createRock(x) {
     rock.style.top = `${(top += 3)}px`;
 
     if (checkCollision(rock)) {
-      endGame()
+      return endGame()
     }
 
     if (top <= 400) {
@@ -103,7 +103,7 @@ function endGame() {
   // gameInterval = null;
   clearInterval(gameInterval);
   ROCKS.forEach(function(rock) { rock.remove() })
-  window.removeEventListener('keydown', moveDodger) 
+  window.removeEventListener('keydown', moveDodger)
   // ROCKS.remove()
   // keydown.removeEventListener();
   alert("YOU LOSE!");
